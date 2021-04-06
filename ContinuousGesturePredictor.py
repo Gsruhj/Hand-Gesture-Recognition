@@ -148,9 +148,11 @@ def showStatistics(predictedClass, confidence):
     if predictedClass == 0:
         className = "Swing"
     elif predictedClass == 1:
-        className = "Palm"
+        #className = "Palm"
+        className = "Grab"
     elif predictedClass == 2:
-        className = "Fist"
+        #className = "Fist"
+        className = "Spin"
 
     cv2.putText(textImage,"Pedicted Class : " + className, 
     (30, 30), 
