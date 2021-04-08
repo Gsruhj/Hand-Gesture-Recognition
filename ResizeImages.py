@@ -10,6 +10,6 @@ def resizeImage(imageName):
 
 for i in range(0, 101):
     # Mention the directory in which you wanna resize the images followed by the image name
-    resizeImage("Dataset/FistTest/fist_" + str(i) + '.png')
+    resizeImage("Dataset/ClickImages/click_" + str(i) + '.png')
 
 
