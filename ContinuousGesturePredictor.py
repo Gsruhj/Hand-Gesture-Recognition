@@ -146,7 +146,7 @@ def showStatistics(predictedClass, confidence):
     className = ""
 
     if predictedClass == 0:
-        className = "Swing"
+        className = "Click"
     elif predictedClass == 1:
         #className = "Palm"
         className = "Grab"

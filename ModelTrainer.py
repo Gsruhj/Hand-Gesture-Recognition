@@ -12,7 +12,7 @@ from sklearn.utils import shuffle
 #Load Images from Swing
 loadedImages = []
 for i in range(0, 1000):
-    image = cv2.imread('Dataset/SwingImages/swing_' + str(i) + '.png')
+    image = cv2.imread('Dataset/ClickImages/click' + str(i) + '.png')
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     loadedImages.append(gray_image.reshape(89, 100, 1))
 
@@ -47,8 +47,8 @@ for i in range(0, 1000):
 testImages = []
 
 #Load Images for swing
-for i in range(0, 100):
-    image = cv2.imread('Dataset/SwingTest/swing_' + str(i) + '.png')
+for i in range(1001, 1101):
+    image = cv2.imread('Dataset/ClickTest/click' + str(i) + '.png')
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     testImages.append(gray_image.reshape(89, 100, 1))
 

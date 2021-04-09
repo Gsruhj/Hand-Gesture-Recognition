@@ -8,8 +8,8 @@ def resizeImage(imageName):
     img = img.resize((basewidth,hsize), Image.ANTIALIAS)
     img.save(imageName)
 
-for i in range(0, 100):
+for i in range(1001, 1101):
     # Mention the directory in which you wanna resize the images followed by the image name
-    resizeImage("Dataset/ZoomTest/zoom_" + str(i) + '.png')
+    resizeImage("Dataset/ClickTest/Click" + str(i) + '.png')
 
 
