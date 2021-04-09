@@ -9,7 +9,7 @@ from cv2 import COLOR_BGR2GRAY
 from sklearn.utils import shuffle
 
 
-#Load Images from Swing
+#Load Images from Click
 loadedImages = []
 for i in range(0, 1000):
     image = cv2.imread('Dataset/ClickImages/click' + str(i) + '.png')
@@ -28,18 +28,36 @@ for i in range(0, 1000):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     loadedImages.append(gray_image.reshape(89, 100, 1))
 
+#Load Images From Translate
+for i in range(0, 1000):
+    image = cv2.imread('Dataset/TranslateImages/translate_' + str(i) + '.png')
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    loadedImages.append(gray_image.reshape(89, 100, 1))
+
+#Load Images From Zoom
+for i in range(0, 1000):
+    image = cv2.imread('Dataset/ZoomImages/zoom_' + str(i) + '.png')
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    loadedImages.append(gray_image.reshape(89, 100, 1))
+
 
 # Create OutputVector
 
 outputVectors = []
 for i in range(0, 1000):
-    outputVectors.append([1, 0, 0])
+    outputVectors.append([1, 0, 0, 0, 0])
 
 for i in range(0, 1000):
-    outputVectors.append([0, 1, 0])
+    outputVectors.append([0, 1, 0, 0, 0])
 
 for i in range(0, 1000):
-    outputVectors.append([0, 0, 1])
+    outputVectors.append([0, 0, 1, 0, 0])
+
+for i in range(0, 1000):
+    outputVectors.append([0, 0, 0, 1, 0])
+
+for i in range(0, 1000):
+    outputVectors.append([0, 0, 0, 0, 1])
 
 
 
@@ -64,17 +82,34 @@ for i in range(0, 100):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     testImages.append(gray_image.reshape(89, 100, 1))
 
+#Load Images for Translate
+for i in range(0, 100):
+    image = cv2.imread('Dataset/TranslateImages/translate_' + str(i) + '.png')
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    testImages.append(gray_image.reshape(89, 100, 1))
+
+#Load Images for Zoom
+for i in range(0, 100):
+    image = cv2.imread('Dataset/ZoomImages/zoom_' + str(i) + '.png')
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    testImages.append(gray_image.reshape(89, 100, 1))
+
 testLabels = []
 
 for i in range(0, 100):
-    testLabels.append([1, 0, 0])
+    testLabels.append([1, 0, 0, 0, 0])
     
 for i in range(0, 100):
-    testLabels.append([0, 1, 0])
+    testLabels.append([0, 1, 0, 0, 0])
 
 for i in range(0, 100):
-    testLabels.append([0, 0, 1])
+    testLabels.append([0, 0, 1, 0, 0])
 
+for i in range(0, 100):
+    testLabels.append([0, 0, 0, 1, 0])
+
+for i in range(0, 100):
+    testLabels.append([0, 0, 0, 0, 1])
 
 
 # Define the CNN Model
@@ -104,7 +139,7 @@ convnet=max_pool_2d(convnet,2)
 convnet=fully_connected(convnet,1000,activation='relu')
 convnet=dropout(convnet,0.75)
 
-convnet=fully_connected(convnet,3,activation='softmax')
+convnet=fully_connected(convnet,5,activation='softmax')
 
 convnet=regression(convnet,optimizer='adam',learning_rate=0.001,loss='categorical_crossentropy',name='regression')
 

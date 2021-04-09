@@ -138,7 +138,7 @@ def getPredictedClass():
     image = cv2.imread('Temp.png')
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     prediction = model.predict([gray_image.reshape(89, 100, 1)])
-    return np.argmax(prediction), (np.amax(prediction) / (prediction[0][0] + prediction[0][1] + prediction[0][2]))
+    return np.argmax(prediction), (np.amax(prediction) / (prediction[0][0] + prediction[0][1] + prediction[0][2] + prediction[0][3] + prediction[0][4]))
 
 def showStatistics(predictedClass, confidence):
 
@@ -153,6 +153,10 @@ def showStatistics(predictedClass, confidence):
     elif predictedClass == 2:
         #className = "Fist"
         className = "Spin"
+    elif predictedClass == 3:
+        className = "Translate"
+    elif predictedClass == 4:
+        className = "Zoom"
 
     cv2.putText(textImage,"Pedicted Class : " + className, 
     (30, 30), 
@@ -199,7 +203,7 @@ convnet=max_pool_2d(convnet,2)
 convnet=fully_connected(convnet,1000,activation='relu')
 convnet=dropout(convnet,0.75)
 
-convnet=fully_connected(convnet,3,activation='softmax')
+convnet=fully_connected(convnet,5,activation='softmax')
 
 convnet=regression(convnet,optimizer='adam',learning_rate=0.001,loss='categorical_crossentropy',name='regression')
 
