@@ -147,16 +147,21 @@ def showStatistics(predictedClass, confidence):
 
     if predictedClass == 0:
         className = "Click"
+        #className = "点击"
     elif predictedClass == 1:
         #className = "Palm"
         className = "Grab"
+        #className = "抓取"
     elif predictedClass == 2:
         #className = "Fist"
-        className = "Spin"
+        className = "Grab"
+        #className = "抓取"
     elif predictedClass == 3:
         className = "Translate"
+        #className = "平移"
     elif predictedClass == 4:
         className = "Zoom"
+        #className = "缩放"
 
     cv2.putText(textImage,"Pedicted Class : " + className, 
     (30, 30), 
