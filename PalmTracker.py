@@ -110,6 +110,8 @@ def main():
                         cv2.imwrite("Dataset/RotateTest/rotate_" +
                                     str(image_num) + '.png', thresholded)
                         image_num += 1
+                        #count to easily find when to finish
+                        print(image_num)
                     cv2.imshow("Thesholded", thresholded)
 
             # draw the segmented hand
