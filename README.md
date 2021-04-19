@@ -13,6 +13,7 @@ This is a simple application of Convolution Neural Networks combined with backgr
 * Numpy
 * Pillow (PIL)
 * Imutils
+* pymouse
 
 ## File Description
 

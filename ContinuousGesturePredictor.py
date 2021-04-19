@@ -7,6 +7,10 @@ import numpy as np
 from PIL import Image
 import cv2
 import imutils
+from pymouse import PyMouse
+import time
+
+
 
 # global variables
 bg = None
@@ -145,26 +149,58 @@ def showStatistics(predictedClass, confidence):
     textImage = np.zeros((300,512,3), np.uint8)
     className = ""
 
+    flagzoom=0
+
     if predictedClass == 0:
         className = "Click"
         #className = "点击"
+        m = PyMouse()
+        time.sleep(0.3)
+        m.move(497, 474)  #鼠标移动到(x,y)位置
+        time.sleep(0.1)
+        m.click(497, 474)  #移动并且在(x,y)位置左击
+
     elif predictedClass == 1:
         #className = "Palm"
         className = "Grab"
         #className = "抓取"
+
     elif predictedClass == 2:
         #className = "Fist"
         className = "Grab"
         #className = "抓取"
+
     elif predictedClass == 3:
         className = "Translate"
         #className = "平移"
+        #operate PPT
+        m = PyMouse()
+        m.move(1375, 319)  #鼠标移动到(x,y)位置
+        time.sleep(0.2)
+        m.click(1375, 319)  #移动并且在(x,y)位置左击
+
     elif predictedClass == 4:
         className = "Zoom"
         #className = "缩放"
+        if flagzoom==0:
+            m = PyMouse()
+            m.click(672, 53)  # 移动并且在(x,y)位置左击
+            time.sleep(0.2)
+            m.click(637, 106)
+            flagzoom=1
+        else:
+            m = PyMouse()
+            m.click(672, 53)  # 移动并且在(x,y)位置左击
+            time.sleep(0.2)
+            m.click(573, 110)
+            flagzoom=0
+
     elif predictedClass == 5:
         className = "Rotate"
         #className = "旋转"
+        m = PyMouse()
+        time.sleep(0.1)
+        m.click(828, 55)    #移动并且在(x,y)位置左击
 
     cv2.putText(textImage,"Pedicted Class : " + className, 
     (30, 30), 
