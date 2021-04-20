@@ -154,11 +154,13 @@ def showStatistics(predictedClass, confidence):
     if predictedClass == 0:
         className = "Click"
         #className = "点击"
+        '''
         m = PyMouse()
         time.sleep(0.3)
         m.move(497, 474)  #鼠标移动到(x,y)位置
         time.sleep(0.1)
         m.click(497, 474)  #移动并且在(x,y)位置左击
+        '''
 
     elif predictedClass == 1:
         #className = "Palm"
@@ -182,6 +184,7 @@ def showStatistics(predictedClass, confidence):
     elif predictedClass == 4:
         className = "Zoom"
         #className = "缩放"
+        '''
         if flagzoom==0:
             m = PyMouse()
             m.click(672, 53)  # 移动并且在(x,y)位置左击
@@ -194,13 +197,20 @@ def showStatistics(predictedClass, confidence):
             time.sleep(0.2)
             m.click(573, 110)
             flagzoom=0
+        '''
 
     elif predictedClass == 5:
         className = "Rotate"
         #className = "旋转"
+        '''
         m = PyMouse()
         time.sleep(0.1)
         m.click(828, 55)    #移动并且在(x,y)位置左击
+        '''
+
+    elif predictedClass == 6:
+        className = "Blank"
+
 
     cv2.putText(textImage,"Pedicted Class : " + className, 
     (30, 30), 

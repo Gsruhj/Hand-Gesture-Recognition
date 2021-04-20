@@ -107,7 +107,7 @@ def main():
                     if start_recording:
 
                         # Mention the directory in which you wanna store the images followed by the image name
-                        cv2.imwrite("Dataset/RotateTest/rotate_" +
+                        cv2.imwrite("Dataset/BlankTest/blank_" +
                                     str(image_num) + '.png', thresholded)
                         image_num += 1
                         #count to easily find when to finish
