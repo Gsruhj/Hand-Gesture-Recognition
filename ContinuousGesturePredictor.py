@@ -177,9 +177,9 @@ def showStatistics(predictedClass, confidence):
         #className = "平移"
         #operate PPT
         m = PyMouse()
-        m.move(1375, 319)  #鼠标移动到(x,y)位置
+        m.move(1497, 439)  #鼠标移动到(x,y)位置
         time.sleep(0.2)
-        m.click(1375, 319)  #移动并且在(x,y)位置左击
+        m.click(1497, 439)  #移动并且在(x,y)位置左击
 
     elif predictedClass == 4:
         className = "Zoom"

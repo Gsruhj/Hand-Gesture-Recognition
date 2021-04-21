@@ -6,14 +6,14 @@ This is a simple application of Convolution Neural Networks combined with backgr
 
 ## Requirements
 
-* Python3
+* Python 3.8
 * Tensorflow version=2.4.1
-* TfLearn
+* TfLearn=0.5.0
 * Opencv headless (cv2) for python3
-* Numpy
-* Pillow (PIL)
+* Numpy =1.19.2
+* Pillow (PIL)=8.0.1
 * Imutils
-* pymouse
+* pymouse=1.0
 
 ## File Description
 
@@ -55,9 +55,3 @@ The next step involves pressing **"s"** on your keyboard in order to start the r
 
 Bring your hand in the **Green Box** drawn inside **Video Feed** window in order to see the predictions.
 Look in demo for some visual clarity.
-
-## Demo of how things look on the go
-
-Well now it's time for some demo.
-
-![Alt Text](https://github.com/SparshaSaha/Hand-Gesture-Recognition-Using-Background-Elllimination-and-Convolution-Neural-Network/blob/master/Demo.gif)
