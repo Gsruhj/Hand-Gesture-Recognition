@@ -65,7 +65,7 @@ def main():
     camera = cv2.VideoCapture(0)
 
     # region of interest (ROI) coordinates
-    top, right, bottom, left = 10, 350, 225, 590
+    top, right, bottom, left = 10, 440, 225, 680
 
     # initialize num of frames
     num_frames = 0
@@ -154,13 +154,12 @@ def showStatistics(predictedClass, confidence):
     if predictedClass == 0:
         className = "Click"
         #className = "点击"
-        '''
         m = PyMouse()
         time.sleep(0.3)
-        m.move(497, 474)  #鼠标移动到(x,y)位置
+        m.move(1066, 523)  #鼠标移动到(x,y)位置
         time.sleep(0.1)
-        m.click(497, 474)  #移动并且在(x,y)位置左击
-        '''
+        m.click(1066, 523)  #移动并且在(x,y)位置左击
+
 
     elif predictedClass == 1:
         #className = "Palm"
@@ -181,10 +180,11 @@ def showStatistics(predictedClass, confidence):
         time.sleep(0.2)
         m.click(1497, 439)  #移动并且在(x,y)位置左击
 
+
     elif predictedClass == 4:
         className = "Zoom"
         #className = "缩放"
-        '''
+
         if flagzoom==0:
             m = PyMouse()
             m.click(672, 53)  # 移动并且在(x,y)位置左击
@@ -197,7 +197,6 @@ def showStatistics(predictedClass, confidence):
             time.sleep(0.2)
             m.click(573, 110)
             flagzoom=0
-        '''
 
     elif predictedClass == 5:
         className = "Rotate"
