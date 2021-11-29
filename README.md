@@ -56,6 +56,6 @@ The next step involves pressing **"s"** on your keyboard in order to start the r
 Bring your hand in the **Green Box** drawn inside **Video Feed** window in order to see the predictions.
 Look in demo for some visual clarity.
 
-## Link
+<!-- ## Link-->
 
-[https://github.com/SparshaSaha/Hand-Gesture-Recognition-Using-Background-Elllimination-and-Convolution-Neural-Network](https://github.com/SparshaSaha/Hand-Gesture-Recognition-Using-Background-Elllimination-and-Convolution-Neural-Network)
+<!-- [https://github.com/SparshaSaha/Hand-Gesture-Recognition-Using-Background-Elllimination-and-Convolution-Neural-Network](https://github.com/SparshaSaha/Hand-Gesture-Recognition-Using-Background-Elllimination-and-Convolution-Neural-Network)-->
